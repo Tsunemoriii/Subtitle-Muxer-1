@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 import os
 import pyrogram
+from pyrogram.enums import ParseMode
 from chat import Chat
 from config import Config
 logging.getLogger('pyrogram').setLevel(logging.WARNING)
@@ -22,7 +23,7 @@ async def help_user(bot, update):
         await bot.send_message(
             update.chat.id,
             Chat.HELP_TEXT,
-            parse_mode = 'html',
+            parse_mode=ParseMode.HTML,
             disable_web_page_preview = True,
             reply_to_message_id = update.id
         )
